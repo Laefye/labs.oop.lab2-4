@@ -22,5 +22,7 @@ HEADERS += \
     exceptions/diffirentsizeexception.h \
     exceptions/incorrectindexexception.h \
     exceptions/testnotpassedexception.h \
+    iterator.h \
     vec.h \
-    vec_imp.h
+    vec_impl.h \
+    iterator_impl.h

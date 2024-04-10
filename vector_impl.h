@@ -1,6 +1,7 @@
 #ifndef VEC_IMPL_H
 #define VEC_IMPL_H
 #include "vec.h"
+#include "iterator.h"
 
 template <typename T>
 Vector<T>::Vector(size_t length) {
@@ -140,6 +141,17 @@ Vector<_T> operator*(const Vector<_T>& vec, const _T& elem) {
 template <typename _T>
 Vector<_T> operator/(const Vector<_T>& vec, const _T& elem) {
     return Vector<_T>(vec) /= elem;
+}
+
+template <typename T>
+Iterator<T> Vector<T>::begin() {
+    return Iterator<T>(*this, 0);
+}
+
+
+template <typename T>
+Iterator<T> Vector<T>::end() {
+    return Iterator<T>(*this, this->length);
 }
 
 #endif

@@ -4,6 +4,7 @@
 #include "exceptions/diffirentsizeexception.h"
 #include <iostream>
 #include <sstream>
+#include <iterator.h>
 
 bool checkThreeValues(const Vector<int>& vector, int a, int b, int c) {
     return vector[0] == a && vector[1] == b && vector[2] == c;
@@ -90,11 +91,25 @@ void testVectorExceptions() {
     }
 }
 
+void testIterator() {
+    Vector<int> numbers{3,2,1};
+    Iterator<int> iter = numbers.begin();
+    int i = 0;
+    while (iter != numbers.end()) {
+        if (numbers[i] != *iter) {
+            throw TestNotPassedException("testIterator: Incorrect values");
+        }
+        i++;
+        ++iter;
+    }
+}
+
 void testVector() {
     try {
         testBaseFunctionalVector();
         testVectorExceptions();
         testVectorMathOperations();
+        testIterator();
         std::cout << "Tests passed" << std::endl;
     }  catch (std::exception& exception) {
         std::cout << "Error: " << exception.what() << std::endl;

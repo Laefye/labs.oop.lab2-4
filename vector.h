@@ -6,6 +6,8 @@
 #include "exceptions/incorrectindexexception.h"
 #include "exceptions/diffirentsizeexception.h"
 
+template <typename T>
+class Iterator;
 
 template <typename T>
 class Vector
@@ -43,8 +45,11 @@ public:
     friend Vector<_T> operator*(const Vector<_T>& vec, const _T& elem);
     template <typename _T>
     friend Vector<_T> operator/(const Vector<_T>& vec, const _T& elem);
+
+    Iterator<T> begin();
+    Iterator<T> end();
 };
 
-#include "vec_imp.h"
+#include "vec_impl.h"
 
 #endif // VEC_H
