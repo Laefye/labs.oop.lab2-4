@@ -3,6 +3,8 @@
 #include <initializer_list>
 #include <cstddef>
 #include <iostream>
+#include "exceptions/incorrectindexexception.h"
+#include "exceptions/diffirentsizeexception.h"
 
 
 template <typename T>
@@ -18,11 +20,12 @@ public:
     explicit Vector(std::initializer_list<T> list);
     ~Vector();
 
-    size_t getLength();
+    size_t getLength() const;
     void setElem(size_t index, const T& elem);
-    T& getElem(size_t index);
+    T& getElem(size_t index) const;
     T* toArray();
     T& operator[](size_t index);
+    const T& operator[](size_t index) const;
 
     template <typename _T>
     friend std::ostream& operator<<(std::ostream& os, const Vector<_T>& vector);
@@ -33,26 +36,15 @@ public:
     Vector<T>& operator/=(const T& elem);
 
     template <typename _T>
-    friend Vector<_T>& operator+(const Vector<_T>& veca, const Vector<_T>& vecb);
+    friend Vector<_T> operator+(const Vector<_T>& veca, const Vector<_T>& vecb);
     template <typename _T>
-    friend Vector<_T>& operator-(const Vector<_T>& veca, const Vector<_T>& vecb);
+    friend Vector<_T> operator-(const Vector<_T>& veca, const Vector<_T>& vecb);
     template <typename _T>
-    friend Vector<_T>& operator*(const Vector<_T>& vec, const _T& elem);
+    friend Vector<_T> operator*(const Vector<_T>& vec, const _T& elem);
     template <typename _T>
-    friend Vector<_T>& operator/(const Vector<_T>& vec, const _T& elem);
+    friend Vector<_T> operator/(const Vector<_T>& vec, const _T& elem);
 };
 
-template<typename D>
-class Meoww {
-public:
-    Meoww();
-    ~Meoww() = default;
-};
-
-template<typename D>
-Meoww<D>::Meoww() {
-
-}
-
+#include "vec_imp.h"
 
 #endif // VEC_H
