@@ -23,6 +23,6 @@ HEADERS += \
     exceptions/incorrectindexexception.h \
     exceptions/testnotpassedexception.h \
     iterator.h \
-    vec.h \
-    vec_impl.h \
-    iterator_impl.h
+    iterator_impl.h \
+    vector.h \
+    vector_impl.h

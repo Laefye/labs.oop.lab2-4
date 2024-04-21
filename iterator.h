@@ -1,6 +1,6 @@
 #ifndef ITERATOR_H
 #define ITERATOR_H
-#include "vec.h"
+#include "vector.h"
 
 template <typename T>
 class Iterator

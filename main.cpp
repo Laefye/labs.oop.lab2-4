@@ -1,4 +1,4 @@
-#include "vec.h"
+#include "vector.h"
 #include "exceptions/testnotpassedexception.h"
 #include "exceptions/incorrectindexexception.h"
 #include "exceptions/diffirentsizeexception.h"

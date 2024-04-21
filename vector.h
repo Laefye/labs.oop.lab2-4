@@ -1,5 +1,5 @@
-#ifndef VEC_H
-#define VEC_H
+#ifndef VECTOR_H
+#define VECTOR_H
 #include <initializer_list>
 #include <cstddef>
 #include <iostream>
@@ -50,6 +50,6 @@ public:
     Iterator<T> end();
 };
 
-#include "vec_impl.h"
+#include "vector_impl.h"
 
-#endif // VEC_H
+#endif // VECTOR_H

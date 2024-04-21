@@ -1,6 +1,6 @@
-#ifndef VEC_IMPL_H
-#define VEC_IMPL_H
-#include "vec.h"
+#ifndef VECTOR_IMPL_H
+#define VECTOR_IMPL_H
+#include "vector.h"
 #include "iterator.h"
 
 template <typename T>
